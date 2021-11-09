@@ -5,7 +5,7 @@ import { Balance } from './components/Balance';
 import { TokenHistory } from './components/TokenHistory';
 // import { TraxSummary } from './components/TraxSummary';
 // import { TraxHistory } from './components/TraxHistory';
-// import { AddTrax } from './components/AddTrax';
+import { AddTrax } from './components/AddTrax';
 import { ContextProvider } from './context/contextAPI';
 
 
@@ -19,7 +19,7 @@ function App() {
         <Balance />
         {/* <TraxSummary /> */}
         {/* <TraxHistory /> */}
-        {/* <AddTrax /> */}
+        <AddTrax />
 
       </div>
     </ContextProvider>

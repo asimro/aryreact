@@ -46,12 +46,12 @@ h4 {
 }
 
 .token_container {
-  /* background-color: rgb(228, 173, 121); */
+  /* background-color: rgb(233, 97, 19); */
   /* box-shadow: var(--box-shadow); */
-  padding: 20px;
+  padding: 1px;
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 10px 0;
   color: rgb(41, 252, 252);
   text-align: left;
 }
@@ -118,9 +118,9 @@ input[type="number"] {
   color: #fff;
   border: 0;
   display: block;
-  font-size: 16px;
+  font-size: 20px;
   margin: 10px 0 30px;
-  padding: 10px;
+  padding: 5px;
   width: 100%;
 }
 
@@ -184,6 +184,11 @@ input[type="number"] {
 
 .balance {
   color: rgb(248, 199, 36);
+  text-align: left;
+  font-weight: bolder;
+}
+.balance > a {
+  color: rgb(248, 199, 36);
   text-align: center;
   font-weight: bolder;
 }
@@ -196,10 +201,16 @@ input[type="number"] {
   border: 0;
   border-radius: 15px;
   display: block;
-  font-size: 25px;
+  font-size: 23px;
   font-style: oblique;
   font-weight: bolder;
-  margin: 10px 0 20px;
-  padding: 10px;
+  margin: 10px 0 5px;
+  padding: auto;
   width: 100%;
+}
+
+.contract {
+  color: whitesmoke;
+  text-align: center;
+  /* font-weight: bolder; */
 }

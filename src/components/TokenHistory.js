@@ -1,7 +1,6 @@
 import '../App.css';
 import React, { useContext } from 'react'
 import { UserContext } from '../context/contextAPI';
-// import { loadBlockChain } from '../context/web3call';
 
 export const TokenHistory = () => {
 
@@ -27,60 +26,66 @@ export const TokenHistory = () => {
 
 
     return (
-        <div className="token_container">
+        <div >
             <div>
-                <h4>
-                    Token Name:
-                </h4>
-                <h4>
-                    Token Symbol :
-                </h4>
-                <h4>
-                    Total Supply :
-                </h4>
-                <h4>
-                    Current Supply :
-                </h4>
-                <h4>
-                    Buy Rate :
-                </h4>
-                <h4>
-                    Sales Start Time :
-                </h4>
-                <h4>
-                    Sales End Time :
-                </h4>
-                <h4>
-                    Total Funds Raised :
-                </h4>
-
+                <h1>Token Updates</h1>
             </div>
 
-            <div>
-                <h4>
-                    {name}
-                </h4>
-                <h4>
-                    {symbol}
-                </h4>
-                <h4>
-                    {totalSupply}
-                </h4>
-                <h4>
-                    {currentSupply}
-                </h4>
-                <h4>
-                    {buyRate}
-                </h4>
-                <h4>
-                    {salesStartTime > 0 ? StartDate : ""}
-                </h4>
-                <h4>
-                    {salesEndTime > 0 ? EndDate : ""}
-                </h4>
-                <h4>
-                    {fundRais}
-                </h4>
+            <div className="token_container">
+                <div>
+                    <h4>
+                        Token Name :
+                    </h4>
+                    <h4>
+                        Token Symbol :
+                    </h4>
+                    <h4>
+                        Total Supply :
+                    </h4>
+                    <h4>
+                        Current Supply :
+                    </h4>
+                    <h4>
+                        Buy Rate :
+                    </h4>
+                    <h4>
+                        Sales Start :
+                    </h4>
+                    <h4>
+                        Sales End :
+                    </h4>
+                    <h4>
+                        Funds Raised :
+                    </h4>
+
+                </div>
+
+                <div>
+                    <h4>
+                        {name}
+                    </h4>
+                    <h4>
+                        {symbol}
+                    </h4>
+                    <h4>
+                        {totalSupply}
+                    </h4>
+                    <h4>
+                        {currentSupply}
+                    </h4>
+                    <h4>
+                        {buyRate + " "} {symbol} per Ether
+                    </h4>
+                    <h4>
+                        {salesStartTime > 0 ? StartDate : ""}
+                    </h4>
+                    <h4>
+                        {salesEndTime > 0 ? EndDate : ""}
+                    </h4>
+                    <h4>
+                        {fundRais}
+                    </h4>
+                </div>
 
             </div>
 

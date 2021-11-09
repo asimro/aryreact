@@ -1,4 +1,6 @@
-const abi = [
+export const contractAddress = "0x6D74C2ca0FF3f1808D05e7d8794E57aC2960Ac9C";
+
+export const abi = [
 	{
 		"anonymous": false,
 		"inputs": [
@@ -507,7 +509,7 @@ const abi = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-];
+]
 
-module.exports = abi;
+// module.exports = abi;
 

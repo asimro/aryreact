@@ -1,3 +1,5 @@
+import Web3 from 'web3';
+import { contractAddress, abi } from '../contract/abiContract';
 import {
     setupWeb3,
     setAccounts,
@@ -14,10 +16,11 @@ import {
     setEvents,
     setError
 } from './Actions';
-import Web3 from 'web3';
 
-let ABI = require("../contract/abiContract.js");
-const ContractAddress = "0x6D74C2ca0FF3f1808D05e7d8794E57aC2960Ac9C";
+
+
+// let ABI = require("../contract/abiContract.js");
+// let ContractAddress = require("../contract/abiContract.js");
 
 
 export const loadBlockChain = async (dispatch) => {
@@ -29,7 +32,7 @@ export const loadBlockChain = async (dispatch) => {
             console.log("Web3 provider", web3)
             dispatch(setupWeb3(web3));
 
-            const contract = new web3.eth.Contract(ABI, ContractAddress);
+            const contract = new web3.eth.Contract(abi, contractAddress);
             console.log('contract', contract);
             dispatch(setContract(contract));
 
@@ -46,7 +49,8 @@ export const loadBlockChain = async (dispatch) => {
             console.log("Total Supply", Totalsupply);
             dispatch(setTotalSupply(Totalsupply));
 
-            const CurrentSupply = await contract.methods.currentSupply().call();
+            const CSupply = await contract.methods.currentSupply().call();
+            const CurrentSupply = web3.utils.fromWei(CSupply, 'ether');
             console.log("Current Supply", CurrentSupply);
             dispatch(setCurrentSupply(CurrentSupply));
 
@@ -62,7 +66,8 @@ export const loadBlockChain = async (dispatch) => {
             console.log("Buy Rate", GetBuyRate);
             dispatch(setGetBuyRate(GetBuyRate));
 
-            const FundsRais = await contract.methods.fundRais().call();
+            const FRais = await contract.methods.fundRais().call();
+            const FundsRais = web3.utils.fromWei(FRais, 'ether');
             console.log("Total Fund Raised", FundsRais);
             dispatch(setFundsRais(FundsRais));
         }
@@ -83,7 +88,8 @@ export const loadAccountBalance = async (contract, dispatch) => {
         console.log("Account", accounts);
         dispatch(setAccounts(accounts));
 
-        const BalanceOf = await contract.methods.balanceOf(accounts[0]).call();
+        const Balance = await contract.methods.balanceOf(accounts[0]).call();
+        const BalanceOf = web3.utils.fromWei(Balance, 'ether');
         console.log("Balance of Account", BalanceOf);
         dispatch(setBalanceOf(BalanceOf));
 

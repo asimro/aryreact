@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../context/contextAPI';
 import { AddTransaction } from '../context/web3trax';
-import { loadHistory, loadBlockChain } from '../context/web3call';
+import { loadAccountBalance, loadBlockChain } from '../context/web3call';
 import '../App.css';
 
 
 export const AddTrax = () => {
     const [amount, setAmount] = useState();
-    const [description, setDescription] = useState();
-    const [{ accounts, contract }, dispatch] = useContext(UserContext);
+    const [description, setDescription] = useState();  //receiver address
+    const [{ accounts, contract, symbol }, dispatch] = useContext(UserContext);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -20,8 +20,8 @@ export const AddTrax = () => {
             console.log(transactions);
 
             await AddTransaction(accounts, contract, transactions, dispatch);
-            await loadHistory(contract, dispatch);
             await loadBlockChain(dispatch);
+            await loadAccountBalance(contract, dispatch);
         }
         catch (error) {
             console.log("error onSubmit trax = ", error);
@@ -30,12 +30,15 @@ export const AddTrax = () => {
 
     return (
         <div>
-            <h3>Adding New Transactions <br />
-                (Income &nbsp;= &nbsp;+ &emsp; and  &emsp;Expenses &nbsp;= &nbsp;-&nbsp;) </h3>
+            <div>
+                <h1>Buy {symbol} Token Here  </h1>
+            </div>
+            <h4> Use &nbsp; Ropsten &nbsp; Network </h4>
+
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="description">
-                        Description
+                        Receiver Address
                     </label>
                     <input type="text"
                         id="description"
@@ -48,18 +51,18 @@ export const AddTrax = () => {
 
                 <div className="form-control">
                     <label htmlFor="amount">
-                        Amount
+                        Ether Amount
                     </label>
                     <input type="number"
                         id="amount"
                         value={amount}
                         onChange={(e) => setAmount(e.target.value)}
-                        placeholder="Value of Transaction"
+                        placeholder="Ether Value (desimals value not allowed)"
                         required="required"
                     />
                 </div>
                 <button className="btn" >
-                    Add Transaction
+                    Buy Token
                 </button>
             </form>
         </div>
