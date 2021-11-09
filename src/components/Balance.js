@@ -11,7 +11,7 @@ export const Balance = () => {
 
     return (
         <div>
-            <h1>Cusotmer Account Details  </h1>
+            <h1>Customer Account Details  </h1>
             <h4 className="balance"> Account : &emsp; &emsp; &emsp; &emsp; &emsp;
                 <a href="https://ropsten.etherscan.io/token/0x6d74c2ca0ff3f1808d05e7d8794e57ac2960ac9c?a="
                     target="_blank"

@@ -57,7 +57,7 @@ export const AddTrax = () => {
                         id="amount"
                         value={amount}
                         onChange={(e) => setAmount(e.target.value)}
-                        placeholder="Ether Value (desimals value not allowed)"
+                        placeholder="Ether Value (decimals value not allowed)"
                         required="required"
                     />
                 </div>
