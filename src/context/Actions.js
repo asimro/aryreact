@@ -13,31 +13,74 @@ export const setAccounts = (accounts) => {
     };
 }
 
-export const setContractAddress = (contract) => {
+export const setContract = (contract) => {
     return {
-        type: 'Set_Contract_Address',
+        type: 'Set_Contract',
         payload: contract
     };
 }
 
-export const setBalance = (balance) => {
+export const setName = (Name) => {
     return {
-        type: 'Set_Balance',
-        payload: balance
+        type: 'Set_Name',
+        payload: Name
     };
 }
 
-export const setIncome = (income) => {
+export const setSymbol = (Symbol) => {
     return {
-        type: 'Set_Income',
-        payload: income
+        type: 'Set_Symbol',
+        payload: Symbol
     };
 }
 
-export const setExpense = (expense) => {
+export const setTotalSupply = (Totalsupply) => {
     return {
-        type: 'Set_Expense',
-        payload: expense
+        type: 'Set_TotalSupply',
+        payload: Totalsupply
+    };
+}
+
+export const setCurrentSupply = (CurrentSupply) => {
+    return {
+        type: 'Set_CurrentSupply',
+        payload: CurrentSupply
+    };
+}
+
+export const setSalesEndTime = (SalesEndTime) => {
+    return {
+        type: 'Set_SalesEndTime',
+        payload: SalesEndTime
+    };
+}
+
+export const setSalesStartTime = (SalesStartTime) => {
+    return {
+        type: 'Set_SalesStartTime',
+        payload: SalesStartTime
+    };
+}
+
+export const setGetBuyRate = (GetBuyRate) => {
+    return {
+        type: 'Set_GetBuyRate',
+        payload: GetBuyRate
+    };
+}
+
+export const setFundsRais = (FundsRais) => {
+    return {
+        type: 'Set_FundsRais',
+        payload: FundsRais
+    };
+}
+
+
+export const setBalanceOf = (BalanceOf) => {
+    return {
+        type: 'Set_BalanceOf',
+        payload: BalanceOf
     };
 }
 

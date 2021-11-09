@@ -11,24 +11,54 @@ export const AppReducer = (state, action) => {
         ...state, accounts: action.payload
       }
 
-    case 'Set_Contract_Address':
+    case 'Set_Contract':
       return {
         ...state, contract: action.payload
       }
 
-    case 'Set_Balance':
+    case 'Set_Name':
       return {
-        ...state, balance: action.payload
+        ...state, name: action.payload
       }
 
-    case 'Set_Income':
+    case 'Set_Symbol':
       return {
-        ...state, income: action.payload
+        ...state, symbol: action.payload
       }
 
-    case 'Set_Expense':
+    case 'Set_TotalSupply':
       return {
-        ...state, expense: action.payload
+        ...state, totalSupply: action.payload
+      }
+
+    case 'Set_CurrentSupply':
+      return {
+        ...state, currentSupply: action.payload
+      }
+
+    case 'Set_SalesEndTime':
+      return {
+        ...state, salesEndTime: action.payload
+      }
+
+    case 'Set_SalesStartTime':
+      return {
+        ...state, salesStartTime: action.payload
+      }
+
+    case 'Set_GetBuyRate':
+      return {
+        ...state, buyRate: action.payload
+      }
+
+    case 'Set_FundsRais':
+      return {
+        ...state, fundRais: action.payload
+      }
+
+    case 'Set_BalanceOf':
+      return {
+        ...state, balanceOf: action.payload
       }
 
     case 'Set_Events':

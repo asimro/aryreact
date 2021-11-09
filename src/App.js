@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Header } from './components/Header';
-import { BalanceContract } from './components/BalanceContract';
 import { Balance } from './components/Balance';
+import { TokenHistory } from './components/TokenHistory';
 // import { TraxSummary } from './components/TraxSummary';
 // import { TraxHistory } from './components/TraxHistory';
 // import { AddTrax } from './components/AddTrax';
@@ -15,7 +15,7 @@ function App() {
     <ContextProvider>
       <div className="container">
         <Header />
-        <BalanceContract/>
+        <TokenHistory/>
         <Balance />
         {/* <TraxSummary /> */}
         {/* <TraxHistory /> */}

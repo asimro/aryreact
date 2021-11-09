@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react'
+import React, { createContext, useReducer, useEffect } from 'react'
 import { AppReducer } from './Reducer';
 import { loadBlockChain } from './web3call';
 
@@ -6,9 +6,15 @@ const initialState = {
     web3: null,
     accounts: [],
     contract: null,
-    balance: 0,
-    income: 0,
-    expnese: 1,
+    name: null,
+    symbol: null,
+    totalSupply: "",
+    currentSupply: "",
+    salesEndTime: "",
+    salesStartTime: "",
+    buyRate: "",
+    fundRais: "",
+    balanceOf: "",
     getAllEvents: [],
     Error: null,
     transaction: []
@@ -17,19 +23,16 @@ const initialState = {
 export const UserContext = createContext(initialState);
 
 
-export const ContextProvider = ({ children }) => {
 
+export const ContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
+    useEffect(() => {
+        loadBlockChain(dispatch)
+    }, [])
 
     return (
         <UserContext.Provider value={[state, dispatch]}>
-            <div>
-                <button className="btnweb3" onClick={() => loadBlockChain(dispatch)}>Connect Your Wallet
-                    <br />
-                    {state.accounts[0]}
-                </button>
-            </div>
 
             {children}
         </UserContext.Provider>
